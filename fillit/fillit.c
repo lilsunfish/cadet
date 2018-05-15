@@ -6,7 +6,7 @@
 /*   By: rastle <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/09 14:53:15 by rastle            #+#    #+#             */
-/*   Updated: 2018/05/10 17:00:38 by rastle           ###   ########.fr       */
+/*   Updated: 2018/05/15 13:16:10 by rastle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,17 @@ int		main(int argc, char** argv)
 	int fd;
 	int ret;
 	char *buf;
-	
+
+	buf = ft_strnew(21);	
 	if (argc != 2)
 	{
 		write(1, "error\n", 6);
 		exit(0);
 	}
-	if ((fd = open(argv[1], O_READONLY) < 0)
-	//read file
+	if ((fd = open(argv[1], O_RDONLY) < 0)
+		//return error
 		return (0);
+	while (ret = read(fd, buf, BUFF_SIZE))
+	i
 	close(fd);
 }
