@@ -6,7 +6,7 @@
 /*   By: rastle <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/09 14:53:15 by rastle            #+#    #+#             */
-/*   Updated: 2018/05/15 13:16:10 by rastle           ###   ########.fr       */
+/*   Updated: 2018/05/15 14:07:32 by rastle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		main(int argc, char** argv)
 	int fd;
 	int ret;
 	char *buf;
+
 
 	buf = ft_strnew(21);	
 	if (argc != 2)
