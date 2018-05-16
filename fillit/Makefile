@@ -10,17 +10,25 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME:
+CFLAGS = -Wall -Wextra -Werror
 
-SRC:
+NAME = fillit
 
-OBJ:
+SRC = 
+
+INCL = includes/
+
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
+$(NAME):
+	gcc -o $(NAME) 
+
 clean:
+	@rm -f $(OBJ)
 
-fclean:
+fclean: clean
+	@rm -f $(NAME)
 
-re:
-
+re: fclean all
