@@ -10,32 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "fillit.h"
 //function to map input to tetrimino
 //
-//function to create aa board
-//
-//
-t_list		map_tetri(char *str)
+t_board		new_board()
 {
-	int i;
 
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == '.')
-		{
-			list[i] = 0;
-			i++;
-		}
-		else if (str[i] == '#')
-		{
-			list[i] = 1;
-			i++;
-		}
-		else 
-		{
-			i++;
-		}
-	}
 }
+//
+void	print_board(t_board *board)
+{
+
+}
+void	free_board()
+{
+
+}
+
+int 	place()
+{
+	//
+}
+

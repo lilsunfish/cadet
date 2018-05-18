@@ -6,7 +6,7 @@
 /*   By: rastle <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/09 14:53:15 by rastle            #+#    #+#             */
-/*   Updated: 2018/05/17 10:50:15 by rastle           ###   ########.fr       */
+/*   Updated: 2018/05/16 14:55:24 by rastle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,43 +20,34 @@ void	check_pieces()
 	// 6 connected sides between 4 blocks
 }
 
-t_list	read_pieces(int fd)
+void	check_file()
 {
-	char *buf;
-	int ret;
-	t_list *list;
-	t_mino *mino;
-	char mark;
-
-	buf = ft_strnew(21)	// check if file input is valid
-	list = NULL;
-	mark = 'A';
-	while (ret = read(fd, buf, 21) != 0)
-	{
-	}
-
+	// check if file input is valid
 	// valid file has 4 lines and then one new line
 }
 
 int		main(int argc, char** argv)
 {
+	char *buf;
+	int fd;//some struct map
+	int ret;
 
-	t_list *lst;
-	t_board *board;
-
+	ret = 0;
+	fd = 0;
+	buf = ft_strnew(21);
 	if (argc != 2)
 	{
 		write(1, "usage: ./fillit input_file\n", 27);
-		return (1);
+		exit(0);
 	}
-	if ((lst = read_pieces(open(argv[1], O_RDONLY))) == NULL)
+	if (fd = open(argv[1], O_RDONLY) == -1)
 	{
 		write(1, "error\n", 6);
-		return (1);
+		exit(0);
 	}
-	board = solve(lst);
-	printboard(board);
-	boardfree(board);
-	lstfree(lst);
+	while (ret = read(fd, buf, BUFF_SIZE) >= 0)
+	{
+		
+	}
 	close(fd);
 }

@@ -10,18 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
+
 
 #ifndef FILLIT_H
 # define FILLIT_H
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include "../libft/libft.h"
+typedef struct	s_board
+{
+	int			size;
+	char		**array;
+}				t_board;
 
-//some structure
-//
-//some other structure
-/
+typedef struct	s_point
+{
+	int			x;
+	int			y;
+}				t_point;
 
-int		check_file()
-{}
+typedef struct	s_mino
+{
+	char		**pos;
+	int			width;
+	int			height;
+	char		value;
+}				t_mino;
+
+int		check_file();
+
 #endif
