@@ -31,8 +31,22 @@ t_list	read_pieces(int fd)
 	buf = ft_strnew(21)	// check if file input is valid
 	list = NULL;
 	mark = 'A';
-	while (ret = read(fd, buf, 21) != 0)
+	while (ret = read(fd, buf, 21) >= 20)
 	{
+		//if ((check_mino(buf, ret) == 0) || mino = get_mino(buf, mark++) == NULL)
+		{
+			//free mems
+		//error out
+		}
+		//addtolist///new t_mino 
+		//free mems
+	}
+	//free buf
+	//check ret
+	//non zero return lstfree
+
+}
+		 
 	}
 
 	// valid file has 4 lines and then one new line
