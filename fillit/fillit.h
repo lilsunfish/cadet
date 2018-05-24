@@ -6,7 +6,7 @@
 /*   By: rastle <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/10 15:17:52 by rastle            #+#    #+#             */
-/*   Updated: 2018/05/15 13:06:31 by rastle           ###   ########.fr       */
+/*   Updated: 2018/05/24 13:01:22 by rastle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct	s_board
 	char		**array;
 }				t_board;
 
-typedef struct	s_point
+typedef struct	s_plot
 {
 	int			x;
 	int			y;
@@ -38,6 +38,16 @@ typedef struct	s_mino
 	char		value;
 }				t_mino;
 
-int		check_file();
+t_list			*read_piece(int fd);
+t_board			*newboard(int size);
+void			printboard(t_board *board);
+int				place(t_mino *mino, t_board *board, int x, int y);
+void			set_piece(t_mino *mino, t_board *board, t_plot *plot, char c);
+t_map			*solve(t_list *list);
+t_plot			*newplot(int x, int y);
+void			freeboard(t_board *board);
+void			free_piece(t_mino *mino);
+t_list			*free_list(t_list *list);
+#endif
 
 #endif

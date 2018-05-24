@@ -6,7 +6,7 @@
 /*   By: rastle <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/09 14:53:15 by rastle            #+#    #+#             */
-/*   Updated: 2018/05/17 10:50:15 by rastle           ###   ########.fr       */
+/*   Updated: 2018/05/24 12:48:59 by rastle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_list	read_pieces(int fd)
 
 	buf = ft_strnew(21)	// check if file input is valid
 	list = NULL;
-	mark = 'A';
+	mark = 'A';	
 	while (ret = read(fd, buf, 21) >= 20)
 	{
 		//if ((check_mino(buf, ret) == 0) || mino = get_mino(buf, mark++) == NULL)
