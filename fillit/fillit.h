@@ -6,7 +6,7 @@
 /*   By: rastle <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/10 15:17:52 by rastle            #+#    #+#             */
-/*   Updated: 2018/05/24 13:01:22 by rastle           ###   ########.fr       */
+/*   Updated: 2018/05/25 11:43:22 by rastle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ typedef struct	s_plot
 typedef struct	s_mino
 {
 	char		**pos;
-	int			width;
-	int			height;
-	char		value;
+	int			w;
+	int			h;
+	char		mark;
 }				t_mino;
 
 t_list			*read_piece(int fd);
