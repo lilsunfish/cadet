@@ -6,35 +6,50 @@
 /*   By: rastle <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 10:07:37 by rastle            #+#    #+#             */
-/*   Updated: 2018/05/29 14:00:13 by rastle           ###   ########.fr       */
+/*   Updated: 2018/05/29 14:57:31 by rastle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		place(t_list *list, t_mino *mino, int x, int y)
+int		place(t_mino *mino, t_board *board, int x, int y)
 {
 	int i;
 	int j;
 
 	i = 0;
-	while (i < mino->h)
+	while (i < mino->w)
 	{
 		j = 0;
-		while (j < mino->w)
+		while (j < mino->h)
 		{
-			if ()
+			if (mino->pos[j][i] == '#' && board->array[y + j][x + i] != '.')
 				return (0);
 			j++;
 		}
 		i++;
 	}
-	write_piece(list, mino, newplot(x, y), mino->mark);
+	write_piece(mino, board, newplot(x, y), mino->mark);
 	return (1);	
 }
 
-void	write_piece(t_list *list, t_mino *mino, t_plot *plot, char c)
+void	write_piece( t_mino *mino, t_board *board, t_plot *plot, char c)
 {
+	int i;
+	int j;
+
+	i = 0;
+	while (i < mino->w)
+	{
+		j = 0;
+		while (j < mino->h)
+		{
+			if (mino->pos[j][i] == '#')
+				board->array[plot->y + j][plot->x + i] = mark;
+			j++;
+		}
+		i++;
+	}
 }
 
 int		solveboard(t_list *list, t_board *board)
@@ -50,12 +65,12 @@ int		solveboard(t_list *list, t_board *board)
 		x = 0;
 		while (x < piece->w)
 		{
-			while (place(list, piece, x, y))
+			while (place(piece, board, x, y))
 			{
 				if (solveboard(list->next, board))
 						return (1);
 				else
-					write_piece(list, piece, newplot(x, y), '.');
+					write_piece(piece, board, newplot(x, y), '.');
 			}
 			x++;
 		}
